@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dashboard </title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="assets/github-logo.png" type="image/x-icon">
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!-- tailwind CSS And DaisyUI CDN Links -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- font Awesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Font CDN Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section id="navbar-section" class="w-full h-10 shadow-xl flex items-center justify-between px-6">
+        <div id="navbar-content" class=" text-center flex  items-center justify-center gap-4">
+            <img class="w-7" src="assets/github-logo.png" alt="GitHub Logo">
+            <h2 class="font-semibold text-xl">GitHub Issues Tracker</h2>
+        </div>
+        <div id="navbar-actions" class="flex items-center justify-center gap-4">
+            <div id="issues-list" class="flex items-center justify-center gap-2">
+                <label id="search-label" class="input-search flex items-center gap-2">
+                    <svg class="h-[1em] opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none"
+                            stroke="currentColor">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.3-4.3"></path>
+                        </g>
+                    </svg>
+                    <input id="search-input" type="search" required placeholder="Search issues..." />
+                </label>
+            </div>
+            <div id="new-issue-container" class="flex items-center justify-center gap-2">
+                <button id="new-issue-btn" class="btn btn-primary">+ New Issue</button>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div id="issues-container"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full h-[calc(100vh-2.5rem)] overflow-y-auto p-6">
+            <!-- Issues will be dynamically added here -->
+            <div id="filter-buttons" class="flex items-center justify-start gap-4 mb-4">
+                <button onclick="filterIssues('All')">All</button>
+                <button onclick="filterIssues('Open')">Open</button>
+                <button onclick="filterIssues('Closed')">Closed</button>
+            </div>
+
+            <div class="issue-card bg-base-200 border-base-300 rounded-box border p-4 mb-4">
+                <div class="issue-card bg-base-200 border-base-300 rounded-box border p-4 mb-4">
+                    <h3 class="issue-title text-lg font-semibold mb-2">Issue Title 1</h3>
+                    <p class="issue-description text-sm mb-2">This is a description of the issue.</p>
+                    <div class="issue-meta text-xs text-gray-500 flex items-center gap-4">
+                        <span class="issue-status badge badge-success">Open</span>
+                        <span class="issue-date">Created on: 2024-06-01</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <div id="issue-modal" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center">
+            <div class="bg-white p-6 rounded-lg w-96">
+
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+                <p id="modal-author"></p>
+
+                <button onclick="closeModal()">Close</button>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- JavaScript Link -->
+    <script src="index.js"></script>
+</body>
+
+</html>

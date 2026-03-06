@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Issues Tracker</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="assets/github-logo.png" type="image/x-icon">
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!-- tailwind CSS And DaisyUI CDN Links -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- font Awesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Font CDN Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Login Section -->
+    <section class="w-[520px] h-[743px] shadow-xl flex-col items-center justify-center mx-11/12 m-auto rounded-xl ">
+        <div id="login-header" class="text-center flex flex-col items-center justify-center gap-4">
+            <img src="assets/github-logo.png" alt="GitHub Logo">
+            <h1 class="text-3xl font-bold gap-3">GitHub Issues Tracker</h1>
+            <p class="text-lg mb-6">Sign in to manage your issues</p>
+        </div>
+        <div id="login-form" class="flex items-center justify-center w-full">
+            <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+
+                <label class="label font-bold text-sm">UserName</label>
+                <input id="input-username" type="text" class="input" placeholder="Enter UserName" />
+
+                <label class="label font-bold text-sm">Password</label>
+                <input id="input-password" type="password" class="input" placeholder="Enter Password" />
+
+                <button id="login-button" class="btn btn-primary mt-4">Sign In</button>
+            </fieldset>
+            <p id="error-message" class="text-red-500 text-sm mt-2"></p>
+        </div>
+        <div id="demo-credentials" class="text-center mt-6">
+            <p class="text-xs font-gray-100 mb-3">demo Credentials:</p>
+            <p class="font-medium text-sm">Username: admin</p>
+            <p class="font-medium text-sm">Password: admin123</p>
+        </div>
+    </section>
+    <!-- JavaScript Link -->
+    <script src="index.js"></script>
+</body>
+
+</html>
